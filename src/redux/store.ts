@@ -1,12 +1,14 @@
-import { combineReducers, createStore, compose, applyMiddleware } from "redux";
-import createSagaMiddleware from "redux-saga";
-import userReducer from "./user/userReducer";
-import projectSaga from "./sagas";
+import { combineReducers, createStore, compose, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import userReducer from './user/userReducer';
+import projectSaga from './sagas';
+import calendarReducer from './calendar/calendarReducer';
 
 const sagaMiddleware = createSagaMiddleware();
 
 const reducers = combineReducers({
   user: userReducer,
+  calendar: calendarReducer,
 });
 
 export type StateType = ReturnType<typeof reducers>;
@@ -14,7 +16,7 @@ export type StateType = ReturnType<typeof reducers>;
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   reducers,
-  composeEnhancers(applyMiddleware(sagaMiddleware))
+  composeEnhancers(applyMiddleware(sagaMiddleware)),
 );
 sagaMiddleware.run(projectSaga);
 

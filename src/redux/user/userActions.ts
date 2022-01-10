@@ -1,5 +1,5 @@
 import { UserType } from "../../types/User";
-import { TYPES } from "./actionTypes";
+import { TYPES } from "./actionUserTypes";
 
 export const updateUserInfo = (data: UserType | null) => ({
   type: TYPES.UPDATE_USER_INFO,

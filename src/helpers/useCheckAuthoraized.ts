@@ -5,7 +5,7 @@ import { checkAuth } from '../redux/user/userActions';
 function useCheckAuthoraized() {
   const dispatch = useDispatch();
   const userInfo = useSelector((state: StateType) => state.user.info);
-  debugger;
+
   if (userInfo) {
     return true;
   }
