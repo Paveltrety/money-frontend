@@ -1,4 +1,4 @@
-import { TYPES } from "./actionTypes";
+import { TYPES } from "./actionUserTypes";
 import { ActionUserReducerType, InitialUserState } from "../types";
 
 const initialState: InitialUserState = {

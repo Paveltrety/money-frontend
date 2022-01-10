@@ -3,7 +3,6 @@ import useCheckAuthoraized from '../../helpers/useCheckAuthoraized';
 
 export const AuthorizedRoute = () => {
   const isAuth = useCheckAuthoraized();
-  debugger
   const location = useLocation();
   if(typeof isAuth === 'undefined'){
     return <h1>Загрузка</h1>

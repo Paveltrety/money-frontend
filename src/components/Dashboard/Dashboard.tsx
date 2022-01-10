@@ -1,6 +1,9 @@
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../redux/user/userActions';
+import AdditionalBlock from '../AdditionalBlock/AdditionalBlock';
+import Calendar from '../Calendar/Calendar';
+import { Wrapper } from './styles';
 
 function Dashboard() {
   const dispatch = useDispatch();
@@ -8,11 +11,11 @@ function Dashboard() {
     dispatch(logout());
   }, [dispatch]);
   return (
-    <div>
-      dashboard <br />
-      Страницу видят только авторизированные пользователи <br />
-      <button onClick={logoutUser}>Выход</button>
-    </div>
+    <Wrapper>
+      <button style={{position: 'absolute', top: 0}} onClick={logoutUser}>Выход</button>
+      <Calendar />
+      <AdditionalBlock />
+    </Wrapper>
   );
 }
 

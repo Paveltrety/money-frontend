@@ -1,5 +1,5 @@
 import { takeEvery } from "redux-saga/effects";
-import { TYPES } from "./user/actionTypes";
+import { TYPES } from "./user/actionUserTypes";
 import {
   checkAuthSaga,
   loginSaga,

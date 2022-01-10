@@ -40,7 +40,7 @@ export function* registrationSaga({
 export function* logoutSaga() {
   try {
     const { result, error } = yield call(AuthService.logout);
-    debugger;
+
     if (result) {
       localStorage.removeItem('token');
       yield put(updateUserInfo(null));
