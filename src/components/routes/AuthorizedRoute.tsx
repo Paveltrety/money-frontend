@@ -7,7 +7,7 @@ export const AuthorizedRoute = () => {
   if(typeof isAuth === 'undefined'){
     return <h1>Загрузка</h1>
   }
-  if (!isAuth) {
+  if (isAuth) {
     return <Navigate to="/authorization" state={{ from: location }} />;
   }
 

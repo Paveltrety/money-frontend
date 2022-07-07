@@ -16,13 +16,13 @@ const CalendarGrid: FC<CalendarGridProps> = ({ startDay, today }) => {
   const selectedDay = useSelector(
     (state: StateType) => state.calendar.selectedDay,
   );
-  
+
   const daysArray = [...Array(totalDays)].map(() => day.add(1, 'day').clone());
 
   return (
     <GridWrapper>
       {[...Array(7)].map((_, index) => (
-        <Cell>
+        <Cell key={index}>
           {moment()
             .day(index + 1)
             .format('ddd')}
@@ -33,8 +33,8 @@ const CalendarGrid: FC<CalendarGridProps> = ({ startDay, today }) => {
           key={itemDay.format('DDMMYYYY')}
           itemDay={itemDay}
           today={today}
-          selectedDayUnix = {selectedDay}
-          //isSelectedDay={selectedDay === moment(itemDay).unix()}
+          selectedDayUnix={selectedDay}
+        //isSelectedDay={selectedDay === moment(itemDay).unix()}
         />
       ))}
     </GridWrapper>

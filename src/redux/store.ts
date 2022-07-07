@@ -3,12 +3,14 @@ import createSagaMiddleware from 'redux-saga';
 import userReducer from './user/userReducer';
 import projectSaga from './sagas';
 import calendarReducer from './calendar/calendarReducer';
+import expensesReducer from './expense/expensesReducer';
 
 const sagaMiddleware = createSagaMiddleware();
 
 const reducers = combineReducers({
   user: userReducer,
   calendar: calendarReducer,
+  expenses: expensesReducer,
 });
 
 export type StateType = ReturnType<typeof reducers>;

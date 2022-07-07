@@ -5,10 +5,9 @@ import CalendarHeader from './CalendarHeader';
 import { CalendarWrapper } from './styles';
 
 const Calendar = () => {
-  //  const today = moment();
   const [today, setToday] = useState(moment());
   const startDay = today.clone().startOf('month').startOf('week');
-  debugger;
+
   const handlerPrevMonth = useCallback(
     () => setToday((prevToday) => prevToday.clone().subtract(1, 'month')),
     [setToday],

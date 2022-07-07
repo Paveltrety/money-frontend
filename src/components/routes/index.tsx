@@ -5,6 +5,7 @@ import { AuthorizedRoute } from './AuthorizedRoute';
 import { NotAuthorizedRoute } from './NotAuthorizedRoute';
 import Authorization from '../AuthPage/Authorization';
 import NotFound from '../NotFoundPage/NotFound';
+import EditProfile from '../EditProfilePage/EditProfile';
 
 export type AuthorizedRouteProps = {
   isAuth: boolean;
@@ -20,6 +21,7 @@ const Routes = () => {
         </Route>
         <Route element={<AuthorizedRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/edit" element={<EditProfile />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </RouteWrapper>

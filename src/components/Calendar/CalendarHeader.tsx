@@ -23,7 +23,7 @@ const CalendarHeader: FC<CalendarHeaderProps> = ({
       </div>
       <div>
         <button onClick={handlerPrevMonth}>&lt;</button>
-        <button onClick={handlerTodayMonth}>Месяц</button>
+        <button onClick={handlerTodayMonth}>Сегодня</button>
         <button onClick={handlerNextMonth}>&gt;</button>
       </div>
     </HeaderWrapper>

@@ -33,6 +33,7 @@ export const Cell = styled.div<CellProps>`
     return isWeekend ? '#272829' : '#1e1f21';
   }};
   color: ${({ isSelectedMonth }) => (isSelectedMonth ? 'white' : '#555759')};
+  cursor: pointer;
 `;
 
 export const DayWrapper = styled.div<DayWrapperProps>`

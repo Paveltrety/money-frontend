@@ -1,5 +1,6 @@
 import { UserType } from '../types/User';
 import { chooceDay } from './calendar/calendarActions';
+import { selectEditExpense } from './expense/expensesActions';
 import { updateUserInfo } from './user/userActions';
 
 export type InitialUserState = {
@@ -18,3 +19,18 @@ export type InitialCalendarState = {
 };
 
 export type ActionCalendarReducerType = ReturnType<typeof chooceDay>;
+
+export type InitialExpenseState = {
+  expensesList: Expense[];
+};
+
+export type Expense = {
+  id: number;
+  categoryId: number;
+  categoryName: string;
+  name: string;
+  value: string;
+  isEdit: boolean;
+};
+
+export type ActionExpensesReducerType = ReturnType<typeof selectEditExpense>;
